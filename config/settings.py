@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     # Third-party
     'rest_framework',
+    "drf_spectacular",
 
     # Our apps
     'products',
@@ -56,6 +57,11 @@ INSTALLED_APPS = [
     'orders',
     'search',
 ]
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
 
 UNFOLD = {
     "SITE_TITLE": "Aforro Admin",
@@ -161,5 +167,12 @@ STORAGES = {
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Aforro API",
+    "DESCRIPTION": "API documentation for the Aforro backend",
+    "VERSION": "1.0.0",
+}
 
 
